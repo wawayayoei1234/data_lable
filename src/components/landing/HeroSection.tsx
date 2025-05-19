@@ -1,9 +1,11 @@
+
 "use client";
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -48,21 +50,23 @@ export default function HeroSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
+            asChild
             size="lg" 
             className="bg-accent hover:bg-accent/90 text-accent-foreground animate-fade-in-up-custom opacity-0" 
             style={{ animationDelay: '0.4s' }}
-            onClick={() => console.log('Contact Us clicked')}
             aria-label="ติดต่อเรา"
           >
-            <Phone className="mr-2 h-5 w-5" />
-            ติดต่อเรา
+            <Link href="#contact-us">
+              <Phone className="mr-2 h-5 w-5" />
+              ติดต่อเรา
+            </Link>
           </Button>
           <Button 
             variant="outline" 
             size="lg" 
             className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 animate-fade-in-up-custom opacity-0" 
             style={{ animationDelay: '0.6s' }}
-            onClick={() => console.log('See All Services clicked')}
+            onClick={() => console.log('See All Services clicked')} // This can be changed to scroll to #services or a dedicated services page later
             aria-label="ดูบริการทั้งหมด"
           >
             ดูบริการทั้งหมด
@@ -73,3 +77,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+    
