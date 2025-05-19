@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'SynergyTech Solutions',
+  title: 'TechX',
   description: 'บริษัทเทคโนโลยีเพื่ออนาคตธุรกิจของคุณ | โซลูชันซอฟต์แวร์, คลาวด์, และ AI',
 };
 
@@ -32,3 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
+
