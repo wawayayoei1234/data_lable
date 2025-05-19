@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import SiteHeader from '@/components/layout/SiteHeader'; // Import the new SiteHeader
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,12 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // The lang attribute here is the initial server-rendered language.
+    // The LanguageSwitcher component will update document.documentElement.lang on the client-side.
     <html lang="th">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
-        {children}
+        <SiteHeader /> {/* Add the SiteHeader here */}
+        <main vaul-drawer-wrapper="" className="min-h-[calc(100vh-3.5rem-1px)] bg-background"> {/* Added main wrapper to ensure footer is pushed down if content is short */}
+          {children}
+        </main>
         <Toaster />
       </body>
     </html>
   );
 }
-
