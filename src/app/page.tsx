@@ -4,6 +4,7 @@ import HeroSection from '@/components/landing/HeroSection';
 import SolutionsSection from '@/components/landing/SolutionsSection';
 import WhyChooseUsSection from '@/components/landing/WhyChooseUsSection';
 import AboutUsSection from '@/components/landing/AboutUsSection';
+import PortfolioSection from '@/components/landing/PortfolioSection';
 import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
         <WhyChooseUsSection />
         <Separator className="my-12 md:my-16" />
         <AboutUsSection />
+        <Separator className="my-12 md:my-16" />
+        <PortfolioSection />
       </div>
       <footer className="w-full py-8 mt-16 text-center border-t">
         <p className="text-sm text-muted-foreground">
@@ -25,4 +28,3 @@ export default function Home() {
     </main>
   );
 }
-
